@@ -1,0 +1,22 @@
+package store.service;
+public class AdminService {
+	public  void adminMenu() {
+		System.out.println
+		("1. List the products in the store" );
+		System.out.println("2. Search the product by using productid");
+	System.out.println("3. List the products by category");
+		System.out.println("4. Search the product by using the name");
+		System.out.println("5. To check the total amount, spend on her products");
+		System.out.println(" 6. the Profit amount that she gets on category wise");
+		
+	}
+
+
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
