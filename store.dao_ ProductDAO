@@ -1,0 +1,70 @@
+package store.dao;
+import java.util.*;
+
+import store.pojo.Product;
+public class ProductDAO {
+	private Map<Integer,Product> mapproduct;
+	private Scanner sc;
+	public ProductDAO()
+	{
+		mapproduct=new HashMap<>();
+		sc=new Scanner(System.in);
+	}
+	public void insertProduct()
+	{
+		System.out.println("Enter how many products u want to have");
+		int noofproduct=sc.nextInt();
+		for(int x=1;x<=noofproduct;x++)
+		{
+			Product p=new Product();
+			System.out.println("Enter Product id ");
+			int pid=sc.nextInt();
+			System.out.println("Enter Product Name ");
+			String pname=sc.next();
+			p.setProductId(pid);
+			p.setProductName(pname);
+			System.out.println("Enter Price ");
+			p.setBuyingPrice(sc.nextDouble());
+			System.out.println("Enter Quantity");
+			p.setAvailableQuantity(sc.nextInt());
+			System.out.println("Enter Category");
+			p.setCategory(sc.next());
+			mapproduct.put(pid, p);
+		}
+	}
+	public void displayDetails()
+	{//data=Map.Entry<Integer,Product>
+		mapproduct.entrySet().stream().forEach(data->
+		{
+			Product p=data.getValue();
+			System.out.println("Product Name "+p.getProductName());
+			System.out.println("Product Quantity"+p.getAvailableQuantity());
+			System.out.println("Buying Price "+p.getBuyingPrice());
+			System.out.println("Selling Price "+p.getSellingPrice());
+		});
+	}
+	
+	public void searchBycategory() {
+		System.out.println("enter category which we want  to search product");
+		String category=sc.next();
+		mapproduct.entrySet().stream().forEach(products->
+		
+	{
+		Product prd =products.getValue();
+		if(prd.getCategory().equals(category))
+			{
+				System.out.println("Product Name" +prd.getProductName());
+				System.out.println("Selling Price" +prd.getSellingPrice());
+			}
+	}
+	
+	}
+	
+	
+	public static void main(String[] args) {
+		ProductDAO pdao=new ProductDAO();
+		pdao.insertProduct();
+		pdao.displayDetails();
+	}
+ 
+}
