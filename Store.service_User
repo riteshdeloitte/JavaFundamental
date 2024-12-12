@@ -1,0 +1,32 @@
+package store.pojo;
+
+public class User {
+	  private String username;
+	    private String emailId;
+	    private String password;
+	    private int superCoins;
+	 
+	 
+	    public String getUsername() {
+	        return username;
+	    }
+	    public String getEmailId() {
+	        return emailId;
+	    }
+	    public String getPassword() {
+	        return password;
+	    }
+	    public int getSuperCoins() {
+	        return superCoins;
+	    }
+	    public void setSuperCoins(int superCoins) {
+	        this.superCoins = superCoins;
+	    }
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
